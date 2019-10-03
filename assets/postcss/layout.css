@@ -233,9 +233,7 @@ a:active {
 @media screen and (max-width: 768px) {
     /* mobile */
     .post-card .post-card-image {
-        width: 200px;
-        height: 200px;
-        object-fit: cover;
+        display: none;
     }
 
     .has-mr-xl {
