@@ -1,0 +1,50 @@
+.page-template {
+    .post-full-title {
+        text-align: left;
+        max-width: var(--post-body-width);
+        margin: 0 auto 3rem auto;
+    }
+}
+
+.leave-page-link {
+    display: block;
+    max-width: var(--post-body-width);
+    margin: 0 auto 12px auto;
+    position: relative;
+    padding-left: 22px;
+
+    .arrow-icon {
+		top: -11px;
+		left: -18px;
+
+		&:before,
+		i:before,
+		i:after {
+			background-color: var(--accent-color);
+		}
+
+		&:before {
+			transition-duration: 150ms;
+            width: 60%;
+		}
+
+		i:before,
+		i:after {
+			transition:
+				width 350ms cubic-bezier(0.25, 1, 0.2, 1),
+				transform 350ms cubic-bezier(0.25, 1, 0.2, 1),
+				background-color 350ms cubic-bezier(0.25, 1, 0.2, 1);
+		}
+	}
+
+    &:active {
+        .arrow-icon {
+            &:before,
+            i:before,
+            i:after {
+                background-color: var(--bright-accent-color);
+            }
+        }
+    }
+}
+

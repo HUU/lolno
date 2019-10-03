@@ -1,0 +1,58 @@
+{
+    "name": "lolno",
+    "description": "Custom theme designed for lolno.net",
+    "version": "0.1.0",
+    "engines": {
+        "ghost-api": "v2"
+    },
+    "license": "UNLICENSED",
+    "keywords": ["ghost-theme"],
+    "author": {
+        "name": "Rheta Book",
+        "email": "readabook123@protonmail.com"
+    },
+    "config": {
+        "posts_per_page": 5,
+        "image_sizes": {}
+    },
+    "scripts": {
+        "dev": "npx gulp",
+        "build": "npx gulp build",
+        "bundle": "npx gulp bundle",
+        "test": "gscan ."
+    },
+    "devDependencies": {
+        "@babel/core": "^7.4.3",
+        "@babel/preset-env": "^7.4.3",
+        "babel-plugin-prismjs": "^1.1.1",
+        "autoprefixer": "^9.5.1",
+        "css-mqpacker": "^7.0.0",
+        "cssnano": "^4.1.10",
+        "gulp": "^4.0.0",
+        "gulp-notify": "^3.2.0",
+        "gulp-plumber": "^1.2.1",
+        "gulp-postcss": "^8.0.0",
+        "gulp-sourcemaps": "^2.6.5",
+        "gulp-zip": "^4.2.0",
+        "postcss-custom-properties": "^8.0.10",
+        "postcss-import": "^12.0.1",
+        "postcss-nested": "^4.1.2",
+        "postcss-mixins": "^6.2.2",
+        "postscribe": "^2.0.8",
+        "prismjs": "^1.17.1",
+        "jquery": "^3.4.1",
+        "rollup": "^1.10.1",
+        "rollup-plugin-babel": "^4.3.2",
+        "rollup-plugin-commonjs": "^9.3.4",
+        "rollup-plugin-node-resolve": "^4.2.3",
+        "rollup-plugin-uglify": "^6.0.2"
+    },
+    "dependencies": {
+        "bezier-easing": "^2.1.0",
+        "flickity": "^2.2.0",
+        "focus-visible": "^4.1.5",
+        "fuse.js": "^3.4.4",
+        "reframe.js": "^2.2.5",
+        "swup": "^2.0.4"
+    }
+}

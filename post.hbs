@@ -1,0 +1,54 @@
+{{!< default}}
+
+<header class="site-header-row">
+    <h1 class="site-title">
+        <a href="{{@site.url}}">
+        {{#if @site.logo}}
+            <img class="site-logo" src="{{img_url @site.logo size="l"}}" alt="{{@site.title}}" />
+        {{else}}
+            {{@site.title}}
+        {{/if}}
+        </a>
+    </h1>
+    <p class="site-description">{{@site.description}}</p>
+
+    {{> "site-nav"}}
+</header>
+<main class="site-content-row">
+    {{#post}}
+
+    {{> "post-content"}}
+
+    <section class="sibling-posts">
+        <div class="inner-wrap">
+        {{#prev_post}}
+            <a class="previous-post {{#if feature_image}}has-image{{/if}}" href="{{url}}">
+                {{#if feature_image}}
+                    <div class="background-image">
+                        <div class="image blurred" style="background-image: url({{img_url feature_image size="xxs"}});"></div>
+                        <div class="image lazyload" data-src="{{img_url feature_image size="l"}}"></div>
+                    </div>
+                {{/if}}
+                <h5>{{t "Older Post"}}</h5>
+                <h3>{{title}}</h3>
+                <div class="arrow-icon prev"><i></i></div>
+            </a>
+        {{/prev_post}}
+
+        {{#next_post}}
+            <a class="next-post {{#if feature_image}}has-image{{/if}}" href="{{url}}">
+                {{#if feature_image}}
+                    <div class="background-image">
+                        <div class="image blurred" style="background-image: url({{img_url feature_image size="xxs"}});"></div>
+                        <div class="image lazyload" data-src="{{img_url feature_image size="l"}}"></div>
+                    </div>
+                {{/if}}
+                <h5>{{t "Newer Post"}}</h5>
+                <h3>{{title}}</h3>
+                <div class="arrow-icon next"><i></i></div>
+            </a>
+        {{/next_post}}
+        </div>
+    </section>
+    {{/post}}
+</main>

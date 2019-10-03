@@ -1,0 +1,247 @@
+
+.post-full {
+    padding-bottom: 5rem;
+    font-size: 1.2em;
+}
+
+.post-full-title {
+    font-size: 3em;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 2rem;
+    color: var(--dark-accent-color);
+    line-height: 1.2em;
+    margin-bottom: 0.2em;
+}
+
+.post-full-meta {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 0.9em;
+}
+
+.post-full-meta-author {
+    font-weight: bold;
+
+    img {
+        width: 1.5em;
+        border-radius: 1em;
+        vertical-align: middle;
+        display: inline-block;
+        margin: -0.2em 0.2em 0 0;
+    }
+}
+
+.post-full-image {
+    text-align: center;
+    margin-bottom: 5rem;
+
+    img {
+        box-shadow: 0 30px 60px -10px rgba(0,0,0,0.3), 0 18px 36px -18px rgba(0,0,0,0.22);
+    }
+}
+
+.post-full-content {
+    max-width: var(--post-body-width);
+    margin: 0 auto;
+}
+
+.sibling-posts {
+	margin: 0 15px 5em;
+	position: relative;
+	border-radius: 5px;
+	overflow: hidden;
+
+	&:before {
+		content: '';
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		border-radius: 5px;
+		border: 1px solid rgba(0,0,0,.1);
+	}
+
+	.inner-wrap {
+		display: table;
+		width: 100%;
+		/* Hack: duplicates border-radius and overflow of .sibling-posts to avoid bug with not rounded corners in Chrome */
+		border-radius: 5px;
+		overflow: hidden;
+	}
+
+	.background-image {
+		visibility: hidden;
+		opacity: 0;
+		transition: opacity 650ms cubic-bezier(0.25, 1, 0.2, 1), visibility 0s linear 650ms;
+	}
+
+	h5,
+	h3 {
+		position: relative;
+		transition: color 650ms cubic-bezier(0.25, 1, 0.2, 1), transform 650ms cubic-bezier(0.25, 1, 0.2, 1);
+		transform: translateX(0px) translateZ(0px);
+	}
+
+	h5 {
+		font-size: 0.8em;
+		font-weight: 600;
+		letter-spacing: 1px;
+		margin: 0;
+        font-family: var(--system-font);
+        text-transform: uppercase;
+	}
+
+	h3 {
+		font-weight: 300;
+		margin: 0;
+	}
+
+	.arrow-icon {
+		top: 0;
+		bottom: 10px;
+		margin: auto;
+
+		&:before,
+		i:before,
+		i:after {
+			background-color: #666;
+		}
+
+		&:before {
+			transition-duration: 650ms;
+		}
+
+		i:before,
+		i:after {
+			transition:
+				width 650ms cubic-bezier(0.25, 1, 0.2, 1),
+				transform 650ms cubic-bezier(0.25, 1, 0.2, 1),
+				background-color 650ms cubic-bezier(0.25, 1, 0.2, 1);
+		}
+
+		&.next {
+			right: 75px;
+		}
+
+		&.prev {
+			left: 36px;
+		}
+	}
+
+	a {
+		padding: 8% 95px;
+		overflow: hidden;
+		position: relative;
+		display: table-cell;
+		vertical-align: middle;
+
+		@media only screen and (min-width: 961px) {
+			h3 {
+				font-size: 1.6em;
+			}
+
+			&:hover, &:focus {
+				&.has-image {
+					h5, h3 {
+						color: #fff;
+					}
+
+					.arrow-icon {
+						&:before, i:before, i:after {
+							background-color: #fff;
+						}
+					}
+				}
+
+				.background-image {
+					transition-delay: 0s;
+					visibility: visible;
+					opacity: 1;
+				}
+
+				h5, h3 {
+					transform: translateX(15px) translateZ(0px);
+				}
+
+				&:nth-child(2) {
+					h5, h3 {
+						transform: translateX(-15px) translateZ(0px);
+					}
+				}
+			}
+
+			&:nth-last-child(2) {
+				width: 50%;
+			}
+
+			&:nth-child(2) {
+				width: 50%;
+				text-align: right;
+
+				.arrow-icon.next {
+					right: 36px;
+				}
+			}
+		}
+	}
+
+	@media only screen and (max-width: 960px) {
+		&:before {
+			border: 0;
+		}
+
+		.inner-wrap, a {
+			display: block;
+		}
+
+		.background-image {
+			opacity: 1;
+			visibility: visible;
+			transition-delay: 0s;
+
+			&:after {
+				opacity: 1;
+				background-color: rgba(0,0,0,.4);
+				transition: opacity 650ms cubic-bezier(0.25, 1, 0.2, 1);
+			}
+		}
+
+		.arrow-icon {
+			display: none;
+		}
+
+		h5,
+		h3 {
+			color: inherit;
+		}
+
+		h3 {
+			max-width: none;
+		}
+
+		a {
+			margin: 15px 0;
+			padding-left: 10%;
+			padding-right: 10%;
+			border-radius: 5px;
+			text-align: center;
+			border: 1px solid rgba(0, 0, 0, 0.1);
+			transition: border-color 500ms cubic-bezier(0.25, 1, 0.2, 1);
+
+			&:hover, &:focus {
+				border-color: rgba(0, 0, 0, 0.4);
+
+				.background-image:after {
+					opacity: 0.65;
+				}
+			}
+
+			&.has-image {
+				border: 0;
+				color: #fff;
+			}
+		}
+	}
+}

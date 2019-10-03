@@ -1,0 +1,35 @@
+@define-mixin horizontal-nav {
+    .site-description, .site-nav, .site-title, .site-nav ul.nav li {
+        margin-bottom: 0;
+    }
+
+    .site-title {
+        margin-right: 2rem;
+    }
+
+    .site-description {
+        margin-right: 2rem;
+    }
+
+    .about-this-site {
+        display: none;
+    }
+
+    .site-nav {
+        flex: 1 1 0;
+    }
+
+    .site-nav ul.nav {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        overflow: hidden;
+        align-items: flex-end;
+        height: var(--nav-item-height);
+
+        li {
+            flex-shrink: 0;
+            margin-right: 0.5rem;
+        }
+    }
+}

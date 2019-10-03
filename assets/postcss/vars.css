@@ -1,0 +1,25 @@
+:root {
+    --accent-color: #307d7f;
+    --dark-accent-color: #003030;
+    --medium-accent-color: #649e9f;
+    --bright-accent-color: #17afb3;
+    --light-accent-color: #bed3d4;
+    --background-accent-color: #e5f5e9;
+    --secondary-color-orange: #fd6623;
+    --secondary-color-yellow: #f7bd4e;
+    --secondary-color-red: #fb3348;
+    --page-background: #fafafa;
+    --page-background-shadow: #858585;
+    --tag-background: #afafaf;
+    --not-quite-black: #252525;
+
+    --top-bar-height: 8px;
+    --space-between-page-top-and-content: 40px;
+    --nav-item-height: 24px;
+    --logo-height: 44px;
+    --post-body-width: 700px;
+
+    --system-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --header-font: 'Merriweather', Georgia, Serif;
+    --monospace-font: 'Nanum Gothic Coding', 'Ubuntu Mono', 'Roboto Mono', monospace;
+}
