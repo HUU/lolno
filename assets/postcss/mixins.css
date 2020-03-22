@@ -32,4 +32,18 @@
             margin-right: 0.5rem;
         }
     }
+
+    .logo-block {
+        /* mobile, tablet, desktop */
+        position: relative !important;
+        width: auto;
+        padding: 2rem 1rem 1rem 2rem;
+        right: initial;
+        top: initial;
+
+        .logo-column {
+            width: auto;
+            padding: initial;
+        }
+    }
 }

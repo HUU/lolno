@@ -4,17 +4,8 @@ html {
 
 body {
     min-height: 100%;
-    background: var(--page-background) url('../images/geometry_pattern.png') repeat-x bottom;
+    background: var(--page-background) url('../images/congruent_pentagon.png') repeat-x bottom;
     font-family: var(--system-font);
-
-    &:before {
-        content: "";
-        width: 100%;
-        height: var(--top-bar-height);
-        display: block;
-        background: var(--accent-color);
-        margin-bottom: calc(-1 * var(--top-bar-height));
-    }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -51,9 +42,8 @@ a:active {
     min-height: 100vh;
 }
 
-.is-280px {
-    flex: none;
-    width: 320px;
+.columns {
+    margin: 0 !important;
 }
 
 .has-mr-xl {
@@ -65,20 +55,39 @@ a:active {
     border-bottom: 1px solid var(--page-background);
 }
 
-.site-title {
-    margin-bottom: calc(var(--logo-height) * 0.11);
-}
-
 .site-description {
-    font-family: var(--header-font);
-    color: #939393;
+    font-family: var(--subtitle-font);
+    color: #d4d4d4;
     text-transform: lowercase;
     font-size: 1.2em;
-    margin-bottom: 2rem;
 }
 
 .site-nav {
     margin-bottom: 3rem;
+}
+
+.logo-block {
+    background-image: linear-gradient(90deg, rgb(6,62,62) 0%, rgb(48,127,109) 55%, rgb(58,145,144) 76%, rgb(33,185,158) 100%);
+    width: 100vw;
+    position: absolute !important;
+    right: 0;
+    top: 0;
+
+    .logo-column {
+        width: 320px;
+        float: right;
+        padding: 2rem 1rem 2rem 0.75rem;
+    }
+
+    @media screen and (min-width: 1216px) and (max-width: 1407px) {
+        /* widescreen */
+        width: calc(50vw + 320px - 583px);
+    }
+
+    @media screen and (min-width: 1408px) {
+        /* fullHD */
+        width: calc(50vw + 320px - 679px);
+    }
 }
 
 .site-nav ul.nav {
@@ -131,8 +140,10 @@ a:active {
 
 .site-header-column {
     position: relative;
-    padding-top: var(--space-between-page-top-and-content);
+    padding-top: calc(var(--logo-height) + 8.75rem);
     padding-right: 3.5em;
+    width: 320px;
+    flex: none;
 
     & > * {
         z-index: 1;
@@ -149,7 +160,6 @@ a:active {
         position: absolute;
         right: 0;
         top: 4px;
-        border-top: var(--top-bar-height) solid var(--medium-accent-color);
     }
 }
 
@@ -203,12 +213,12 @@ a:active {
 
     &:hover {
         background: var(--page-background);
-        transform: translatey(-10px);
-        transition:0.5s;
+        transform: translatex(-5px);
+        transition:0.2s;
 
         & .post-card-image {
             box-shadow: var(--page-background-shadow) 0px 20px 20px 0px;
-            transition:0.4s;
+            transition:0.3s;
         }
     }
 }
@@ -216,7 +226,7 @@ a:active {
 .site-header-row {
     width: 100%;
     align-items: center;
-    padding: var(--space-between-page-top-and-content) 0 var(--space-between-page-top-and-content) 0;
+    /*padding: var(--space-between-page-top-and-content) 0 var(--space-between-page-top-and-content) 0;*/
     display: flex;
 
     @mixin horizontal-nav;
@@ -268,7 +278,7 @@ a:active {
     .site-header-column {
         width: 100%;
         align-items: center;
-        padding-right: 0;
+        padding: 0;
         display: flex;
         margin-bottom: calc(var(--space-between-page-top-and-content) / 2);
 

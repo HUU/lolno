@@ -1,17 +1,21 @@
 {{!< default}}
 
 <div class="columns is-fullheight">
-    <header class="column is-280px site-header-column">
-        <h1 class="site-title">
-            <a href="{{@site.url}}">
-            {{#if @site.logo}}
-                <img class="site-logo" src="{{img_url @site.logo size="l"}}" alt="{{@site.title}}" />
-            {{else}}
-                {{@site.title}}
-            {{/if}}
-            </a>
-        </h1>
-        <p class="site-description">{{@site.description}}</p>
+    <header class="column site-header-column">
+        <div class="logo-block">
+            <div class="logo-column">
+                <h1 class="site-title">
+                    <a href="{{@site.url}}">
+                    {{#if @site.logo}}
+                        <img class="site-logo" src="{{img_url @site.logo size="l"}}" alt="{{@site.title}}" />
+                    {{else}}
+                        {{@site.title}}
+                    {{/if}}
+                    </a>
+                </h1>
+                <p class="site-description">{{@site.description}}</p>
+            </div>
+        </div>
 
         {{> "site-nav"}}
 
