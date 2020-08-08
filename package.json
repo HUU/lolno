@@ -42,7 +42,7 @@
         "postcss-mixins": "^6.2.3",
         "postcss-nested": "^4.2.1",
         "postscribe": "^2.0.8",
-        "prismjs": "^1.19.0",
+        "prismjs": "^1.21.0",
         "rollup": "^1.32.1",
         "rollup-plugin-babel": "^4.4.0",
         "rollup-plugin-commonjs": "^9.3.4",
