@@ -284,11 +284,6 @@ a:active {
 @media screen and (max-width: 1215px) {
     /* mobile, tablet, desktop */
 
-    body {
-        background-position: calc(100vw -  var(--right-pattern-width-small));
-        padding-right: var(--right-pattern-width-small);
-    }
-
     .site {
         padding-right: 2rem;
         padding-left: 1rem;
@@ -326,12 +321,22 @@ a:active {
     .has-mr-xl {
         margin-right: 2rem;
     }
+
+    body {
+        background-position: calc(100vw);
+        padding-right: 0;
+    }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1215px) {
 
     .has-mr-xl {
         margin-right: 3rem;
+    }
+
+    body {
+        background-position: calc(100vw -  var(--right-pattern-width-small));
+        padding-right: var(--right-pattern-width-small);
     }
 
 }
