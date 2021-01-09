@@ -4,8 +4,10 @@ html {
 
 body {
     min-height: 100%;
-    background: var(--page-background) url('../images/congruent_pentagon.png') repeat-x bottom;
+    background: var(--page-background) url('../images/topography_pattern.png') repeat-y;
+    background-position: calc(100vw - var(--right-pattern-width));
     font-family: var(--system-font);
+    padding-right: var(--right-pattern-width);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -51,8 +53,7 @@ a:active {
 }
 
 .site {
-    /* prevent margin collapse at the bototm of the page */
-    border-bottom: 1px solid var(--page-background);
+
 }
 
 .site-description {
@@ -60,6 +61,8 @@ a:active {
     color: #d4d4d4;
     text-transform: lowercase;
     font-size: 1.2em;
+    line-height: 1em;
+    padding-top: 1em;
 }
 
 .site-nav {
@@ -67,7 +70,10 @@ a:active {
 }
 
 .logo-block {
-    background-image: linear-gradient(90deg, rgb(6,62,62) 0%, rgb(48,127,109) 55%, rgb(58,145,144) 76%, rgb(33,185,158) 100%);
+    background: linear-gradient(119deg, #071017, #283c47, #466466, #382044, #53644d, #4b4b4b, #0b4057, #674a64, #071017);
+    background-size: 1600% 1600%;
+    animation: UmbralGradient 60s ease infinite;
+
     width: 100vw;
     position: absolute !important;
     right: 0;
@@ -76,7 +82,11 @@ a:active {
     .logo-column {
         width: 320px;
         float: right;
-        padding: 2rem 1rem 2rem 0.75rem;
+        padding: 2rem 2rem 2rem 0.75rem;
+    }
+
+    .site-logo {
+        animation: LogoChroma 60s ease infinite;
     }
 
     @media screen and (min-width: 1216px) and (max-width: 1407px) {
@@ -88,6 +98,17 @@ a:active {
         /* fullHD */
         width: calc(50vw + 320px - 679px);
     }
+}
+
+@keyframes UmbralGradient {
+    0%{background-position:0% 15%}
+    50%{background-position:100% 86%}
+    100%{background-position:0% 15%}
+}
+
+@keyframes LogoChroma {
+    0%{filter: hue-rotate(0deg)}
+    100%{filter: hue-rotate(360deg)}
 }
 
 .site-nav ul.nav {
@@ -140,7 +161,7 @@ a:active {
 
 .site-header-column {
     position: relative;
-    padding-top: calc(var(--logo-height) + 8.75rem);
+    padding-top: calc(var(--logo-height) + 9.75rem);
     padding-right: 3.5em;
     width: 320px;
     flex: none;
@@ -159,26 +180,37 @@ a:active {
         z-index: 0;
         position: absolute;
         right: 0;
-        top: 4px;
+        top: 0;
     }
 }
 
+.site-content-row {
+    padding-bottom: 1px; /* prevent margin collapse on the bottom */
+}
+
 .site-content-column {
+    background: var(--page-background);
     padding-top: calc(var(--space-between-page-top-and-content) + var(--logo-height) * 0.5);
     padding-left: 5rem;
+    padding-bottom: 2rem;
     position: relative;
 }
 
 .tag:not(body) {
-    background-color: #afafaf;
+    background-color: var(--tag-background);
     color: #fff;
 
-    &.tag-management {
-        background-color: var(--secondary-color-orange);
+    &.tag-career {
+        background-color: var(--secondary-color-teal);
         color: #fff;
     }
 
-    &.tag-technology {
+    &.tag-management {
+        background-color: var(--secondary-color-plum);
+        color: #fff;
+    }
+
+    &.tag-technology, &.tag-development {
         background-color: var(--secondary-color-yellow);
         color: #fff;
     }
@@ -205,8 +237,8 @@ a:active {
     }
 
     .post-card-image {
-        width: 400px;
-        height: 180px;
+        width: 240px;
+        height: 280px;
         object-fit: cover;
         background: var(--medium-accent-color);
     }
@@ -240,30 +272,25 @@ a:active {
     margin: 0 !important;
 }
 
-@media screen and (max-width: 768px) {
-    /* mobile */
-    .post-card .post-card-image {
-        display: none;
-    }
-
-    .has-mr-xl {
-        margin-right: 2rem;
-    }
-}
-
 @media screen and (min-width: 769px) and (max-width: 1023px) {
     /* tablet */
     .post-card .post-card-image {
-        width: 280px;
-        height: 150px;
+        width: 180px;
+        height: 220px;
         object-fit: cover;
     }
 }
 
 @media screen and (max-width: 1215px) {
     /* mobile, tablet, desktop */
+
+    body {
+        background-position: calc(100vw -  var(--right-pattern-width-small));
+        padding-right: var(--right-pattern-width-small);
+    }
+
     .site {
-        padding-right: 1rem;
+        padding-right: 2rem;
         padding-left: 1rem;
         & > .columns {
             display: block;
@@ -290,6 +317,25 @@ a:active {
     }
 }
 
+@media screen and (max-width: 768px) {
+    /* mobile */
+    .post-card .post-card-image {
+        display: none;
+    }
+
+    .has-mr-xl {
+        margin-right: 2rem;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1215px) {
+
+    .has-mr-xl {
+        margin-right: 3rem;
+    }
+
+}
+
 @media screen and (min-width: 1216px) and (max-width: 1407px) {
     /* widescreen */
     .site-content-column {
@@ -297,9 +343,13 @@ a:active {
     }
 
     .post-card .post-card-image {
-        width: 300px;
-        height: 180px;
+        width: 200px;
+        height: 240px;
         object-fit: cover;
+    }
+
+    .has-mr-xl {
+        margin-right: 3rem;
     }
 }
 

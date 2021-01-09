@@ -505,6 +505,21 @@ const highlight = {
 
 /*
  * ----------------------------------------------------------------
+ * Stupid Random Taglines
+ * ----------------------------------------------------------------
+ */
+
+const taglines = {
+	init: function () {
+		const container = document.querySelector('.site-description');
+		if (container && window.taglines) {
+			container.innerHTML = window.taglines[Math.floor(Math.random() * window.taglines.length)];
+		}
+	}
+}
+
+/*
+ * ----------------------------------------------------------------
  * Page Loading
  * ----------------------------------------------------------------
  */
@@ -512,5 +527,6 @@ $(document).ready(function() {
     responsiveEmbeds.init();
     images.init();
     siblingPosts.init();
-    highlight.init();
+	highlight.init();
+	taglines.init();
 });

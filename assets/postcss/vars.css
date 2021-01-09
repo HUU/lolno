@@ -5,8 +5,10 @@
     --bright-accent-color: #17afb3;
     --light-accent-color: #bed3d4;
     --background-accent-color: #e5f5e9;
-    --secondary-color-orange: #fd6623;
-    --secondary-color-yellow: #f7bd4e;
+    --secondary-color-orange: #674020;
+    --secondary-color-yellow: #676320;
+    --secondary-color-plum: #4b235a;
+    --secondary-color-teal: #1f6662;
     --secondary-color-red: #fb3348;
     --page-background: #fafafa;
     --page-background-shadow: #858585;
@@ -18,6 +20,9 @@
     --nav-item-height: 24px;
     --logo-height: 44px;
     --post-body-width: 700px;
+
+    --right-pattern-width: 120px;
+    --right-pattern-width-small: 46px;
 
     --system-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     --subtitle-font: 'Menco', Roboto, Helvetica, Arial, sans-serif;

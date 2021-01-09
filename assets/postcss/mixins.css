@@ -37,6 +37,7 @@
         /* mobile, tablet, desktop */
         position: relative !important;
         width: auto;
+        max-width: 375px;
         padding: 2rem 1rem 1rem 2rem;
         right: initial;
         top: initial;
