@@ -62,7 +62,7 @@ const read = {
                 }]
             ]
 		}),
-		uglify()
+
 	]
 }
 

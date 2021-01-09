@@ -32,7 +32,13 @@
             {{/foreach}}
         </div>
 
-        {{pagination}}
+        <script>
+            window.max_pages = parseInt('{{pagination.pages}}');
+            window.post_index = true;
+        </script>
+        <noscript>
+            {{pagination}}
+        </noscript>
     </main>
 </div>
 

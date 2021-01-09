@@ -518,6 +518,31 @@ const taglines = {
 	}
 }
 
+const infinitescroll = {
+	page: 1,
+	url: window.location.href,
+	init: function() {
+		if (window.post_index) {
+			if (this.url.charAt(this.url.length - 1) != '/') {
+				this.url = this.url + '/';
+			}
+
+			$(window).scroll(this.onscroll.bind(this));
+		}
+	},
+	onscroll: function() {
+		if (this.page < window.max_pages && ($(window).scrollTop() + $(window).height() >= $(document).height())) {
+					
+			var nextPage = this.url + 'page/' + (this.page + 1);
+			this.page += 1;
+
+			$.get(nextPage, function (content) {
+				$('.post-feed').append($($.parseHTML(content)).find('.post-card'));
+			});
+		}
+	}
+}
+
 /*
  * ----------------------------------------------------------------
  * Page Loading
@@ -529,4 +554,5 @@ $(document).ready(function() {
     siblingPosts.init();
 	highlight.init();
 	taglines.init();
+	infinitescroll.init();
 });

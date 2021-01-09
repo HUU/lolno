@@ -25,7 +25,7 @@
                 <a class="post-card-content-link" href="{{url}}">{{title}}</a>
             </h2>
             <section class="post-card-excerpt">
-                <p>{{excerpt words="33"}}[...]</p>
+                <p>{{excerpt characters="300"}}{{#unless custom_excerpt}}[...]{{/unless}}</p>
             </section>
             <section class="post-card-tags">
                 {{#foreach tags}}
