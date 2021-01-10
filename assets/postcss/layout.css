@@ -12,8 +12,8 @@ body {
 }
 
 body.post-template {
-    background: url('../images/topography_pattern.png') repeat-y, url('../images/nature_path.png') no-repeat;
-    background-position: calc(100vw - var(--right-pattern-width)) top, calc(-1632px + (100vw - var(--post-body-width) - 150px)*0.5 - var(--right-pattern-width) + 290px) calc(100% - -270px)
+    background: url('../images/topography_pattern.png') repeat-y, url('../images/ghost_girl_2.png') no-repeat;
+    background-position: calc(100vw - var(--right-pattern-width)) top, calc(-1130px + (100vw - var(--post-body-width) - 150px)*0.5 - var(--right-pattern-width) + 290px) bottom;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -264,7 +264,6 @@ a:active {
 .site-header-row {
     width: 100%;
     align-items: center;
-    /*padding: var(--space-between-page-top-and-content) 0 var(--space-between-page-top-and-content) 0;*/
     display: flex;
 
     @mixin horizontal-nav;
@@ -290,12 +289,8 @@ a:active {
 @media screen and (max-width: 1215px) {
     /* mobile, tablet, desktop */
 
-    .site {
-        padding-right: 2rem;
-        padding-left: 1rem;
-        & > .columns {
-            display: block;
-        }
+    .site > .columns {
+        display: block;
     }
 
     .site-content-column {
@@ -332,9 +327,27 @@ a:active {
         background-position: calc(100vw);
         padding-right: 0;
     }
+
+    .site {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .site-header-row, .site-header-column {
+        flex-direction: column;
+
+        .logo-block {
+            margin-bottom: 1rem;
+        }
+    }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1215px) {
+
+    .site {
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
 
     .has-mr-xl {
         margin-right: 3rem;
