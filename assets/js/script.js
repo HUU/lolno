@@ -520,6 +520,10 @@ const taglines = {
 
 const infinitescroll = {
 	page: 1,
+	loading: false,
+	loaderTimeout: null,
+	posts: null,
+	request: null,
 	url: window.location.href,
 	init: function() {
 		if (window.post_index) {
@@ -531,15 +535,38 @@ const infinitescroll = {
 		}
 	},
 	onscroll: function() {
-		if (this.page < window.max_pages && ($(window).scrollTop() + $(window).height() >= $(document).height())) {
+		if (this.page < window.max_pages && !this.loading && ($(window).scrollTop() + $(window).height() >= $(document).height())) {
 					
 			var nextPage = this.url + 'page/' + (this.page + 1);
 			this.page += 1;
+			this.loading = true;
 
-			$.get(nextPage, function (content) {
-				$('.post-feed').append($($.parseHTML(content)).find('.post-card'));
-			});
+			$('.posts-loading').fadeIn();
+			this.loaderTimeout = setTimeout((function () {
+				this.loaderTimeout = null;
+
+				if (this.request) {
+					return;
+				} else {
+					this.hideLoader();
+				}
+			}).bind(this), 2000);
+
+			this.request = $.get(nextPage, (function (content) {
+				this.request = null;
+				this.posts = $($.parseHTML(content)).find('.post-card');
+
+				if (this.loaderTimeout) {
+					return;
+				} else {
+					this.hideLoader();
+				}
+			}).bind(this));
 		}
+	},
+	hideLoader: function() {
+		$('.post-feed').append(this.posts);
+		$('.posts-loading').hide();
 	}
 }
 

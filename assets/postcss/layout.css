@@ -179,7 +179,6 @@ a:active {
 
     &:before {
         content: "";
-        background: white;
         display: block;
         width: 100vw;
         height: 100%;
@@ -187,6 +186,7 @@ a:active {
         position: absolute;
         right: 0;
         top: 0;
+        background: white url(../images/ghost_girl_2.png) no-repeat calc(100vw - 980px) calc(100% - -180px);
     }
 }
 
