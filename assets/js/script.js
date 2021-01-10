@@ -541,7 +541,7 @@ const infinitescroll = {
 			this.page += 1;
 			this.loading = true;
 
-			$('.posts-loading').fadeIn();
+			$('.posts-loading').removeClass("hidden").addClass("visible");
 			this.loaderTimeout = setTimeout((function () {
 				this.loaderTimeout = null;
 
@@ -566,7 +566,7 @@ const infinitescroll = {
 	},
 	hideLoader: function() {
 		$('.post-feed').append(this.posts);
-		$('.posts-loading').hide();
+		$('.posts-loading').removeClass("visible").addClass("hidden");
 	}
 }
 

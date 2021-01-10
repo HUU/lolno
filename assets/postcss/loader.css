@@ -13,6 +13,17 @@
     }
 }
 
+.visible {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 1s linear;
+}
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 1s, opacity 1s linear;
+}
+
 .lds-ellipsis {
     display: inline-block;
     position: relative;
