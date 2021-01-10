@@ -4,10 +4,16 @@ html {
 
 body {
     min-height: 100%;
-    background: var(--page-background) url('../images/topography_pattern.png') repeat-y;
+    background: url('../images/topography_pattern.png') repeat-y;
+    background-color: var(--page-background);
     background-position: calc(100vw - var(--right-pattern-width));
     font-family: var(--system-font);
     padding-right: var(--right-pattern-width);
+}
+
+body.post-template {
+    background: url('../images/topography_pattern.png') repeat-y, url('../images/nature_path.png') no-repeat;
+    background-position: calc(100vw - var(--right-pattern-width)) top, calc(-1632px + (100vw - var(--post-body-width) - 150px)*0.5 - var(--right-pattern-width) + 290px) calc(100% - -270px)
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -322,7 +328,7 @@ a:active {
         margin-right: 2rem;
     }
 
-    body {
+    body, body.post-template {
         background-position: calc(100vw);
         padding-right: 0;
     }
@@ -334,7 +340,7 @@ a:active {
         margin-right: 3rem;
     }
 
-    body {
+    body, body.post-template {
         background-position: calc(100vw -  var(--right-pattern-width-small));
         padding-right: var(--right-pattern-width-small);
     }
