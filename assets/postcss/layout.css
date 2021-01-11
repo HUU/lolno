@@ -186,7 +186,9 @@ a:active {
         position: absolute;
         right: 0;
         top: 0;
-        background: white url(../images/ghost_girl_2.png) no-repeat calc(100vw - 980px) calc(100% - -180px);
+        background: white url(../images/ghost_girl_2.png) no-repeat;
+        background-position: calc((100vw - 1344px) * 0.5 - var(--right-pattern-width) - 398px) calc(100vh - 729px);
+        background-attachment: fixed;
     }
 }
 
@@ -374,6 +376,12 @@ a:active {
 
     .has-mr-xl {
         margin-right: 3rem;
+    }
+
+    .site-header-column {
+        &:before {
+            background-position: calc((100vw - 1152px) * 0.5 - var(--right-pattern-width) - 398px) calc(100vh - 729px);
+        }
     }
 }
 
