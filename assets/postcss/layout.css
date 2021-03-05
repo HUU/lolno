@@ -12,8 +12,8 @@ body {
 }
 
 body.post-template {
-    background: url('../images/topography_pattern.png') repeat-y, url('../images/ghost_girl_2.png') no-repeat;
-    background-position: calc(100vw - var(--right-pattern-width)) top, calc(-1130px + (100vw - var(--post-body-width) - 150px)*0.5 - var(--right-pattern-width) + 290px) bottom;
+    background: url('../images/topography_pattern.png') repeat-y;
+    background-position: calc(100vw - var(--right-pattern-width)) top;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -186,9 +186,7 @@ a:active {
         position: absolute;
         right: 0;
         top: 0;
-        background: white url(../images/ghost_girl_2.png) no-repeat;
-        background-position: calc((100vw - 1344px) * 0.5 - var(--right-pattern-width) - 398px) calc(100vh - 729px);
-        background-attachment: fixed;
+        background: white;
     }
 }
 
