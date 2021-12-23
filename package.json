@@ -1,9 +1,9 @@
 {
     "name": "lolno",
     "description": "Custom theme designed for lolno.net",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "engines": {
-        "ghost-api": "v3"
+        "ghost-api": "v4"
     },
     "license": "UNLICENSED",
     "keywords": [
@@ -15,7 +15,9 @@
     },
     "config": {
         "posts_per_page": 5,
-        "image_sizes": {}
+        "image_sizes": {
+            "xl": {}
+        }
     },
     "scripts": {
         "dev": "npx gulp",
@@ -24,37 +26,37 @@
         "test": "gscan ."
     },
     "devDependencies": {
-        "@babel/core": "^7.9.0",
-        "@babel/preset-env": "^7.9.0",
-        "autoprefixer": "^9.7.4",
-        "babel-plugin-prismjs": "^1.1.1",
-        "css-mqpacker": "^7.0.0",
-        "cssnano": "^4.1.10",
-        "gulp": "^4.0.0",
-        "gulp-notify": "^3.2.0",
+        "@babel/core": "^7.16.5",
+        "@babel/preset-env": "^7.16.5",
+        "autoprefixer": "^10.4.0",
+        "babel-plugin-prismjs": "^2.1.0",
+        "cssnano": "^5.0.14",
+        "gulp": "^4.0.2",
+        "gulp-notify": "^4.0.0",
         "gulp-plumber": "^1.2.1",
-        "gulp-postcss": "^8.0.0",
-        "gulp-sourcemaps": "^2.6.5",
+        "gulp-postcss": "^9.0.1",
+        "gulp-sourcemaps": "^3.0.0",
         "gulp-zip": "^4.2.0",
-        "jquery": "^3.5.0",
-        "postcss-custom-properties": "^8.0.10",
-        "postcss-import": "^12.0.1",
-        "postcss-mixins": "^6.2.3",
-        "postcss-nested": "^4.2.1",
+        "jquery": "^3.6.0",
+        "postcss-combine-media-query": "^1.0.1",
+        "postcss-custom-properties": "^12.0.1",
+        "postcss-import": "^14.0.2",
+        "postcss-mixins": "^9.0.1",
+        "postcss-nested": "^5.0.6",
         "postscribe": "^2.0.8",
-        "prismjs": "^1.21.0",
-        "rollup": "^1.32.1",
+        "prismjs": "^1.25.0",
+        "rollup": "^2.61.1",
         "rollup-plugin-babel": "^4.4.0",
         "rollup-plugin-commonjs": "^9.3.4",
         "rollup-plugin-node-resolve": "^4.2.3",
-        "rollup-plugin-uglify": "^6.0.4"
+        "rollup-plugin-terser": "^7.0.2"
     },
     "dependencies": {
         "bezier-easing": "^2.1.0",
-        "flickity": "^2.2.0",
-        "focus-visible": "^4.1.5",
-        "fuse.js": "^3.6.1",
-        "reframe.js": "^2.2.7",
-        "swup": "^2.0.9"
+        "flickity": "^2.3.0",
+        "focus-visible": "^5.2.0",
+        "fuse.js": "^6.5.3",
+        "reframe.js": "^3.0.3",
+        "swup": "^2.0.14"
     }
 }

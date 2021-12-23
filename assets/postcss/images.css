@@ -11,12 +11,7 @@
 
 .background-image {
     background-color: #394045;
-
-    &:after {
-        content: ' ';
-        background-color: rgba(0, 0, 0, 0.3);
-    }
-
+    
     .image {
         background-size: cover;
         background-position: center;

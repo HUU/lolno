@@ -9,7 +9,7 @@ const rollup   = require('rollup')
 const babel    = require('rollup-plugin-babel')
 const commonjs = require('rollup-plugin-commonjs')
 const resolve  = require('rollup-plugin-node-resolve')
-const {uglify} = require('rollup-plugin-uglify')
+const { terser } = require('rollup-plugin-terser')
 
 function styles() {
 	const processors = [
@@ -17,7 +17,7 @@ function styles() {
 		require('postcss-mixins'),
 		require('postcss-nested'),
 		require('postcss-custom-properties')({ preserve: false }),
-		require('css-mqpacker')({ sort: true }),
+		require('postcss-combine-media-query'),
 		require('autoprefixer')(),
 		require('cssnano')( {
 			preset: ['default', {
@@ -67,12 +67,13 @@ const read = {
 }
 
 const write = {
-	file: 'assets/built/script.min.js',
-	format: 'iife',
-	sourcemap: true,
 	output: {
-		name: 'script'
-	}
+		file: 'assets/built/script.min.js',
+		name: 'script',
+		format: 'iife',
+		sourcemap: true,
+	},
+	plugins: [],
 }
 
 async function scripts() {
