@@ -17,7 +17,6 @@ function styles() {
 		require('postcss-mixins'),
 		require('postcss-nested'),
 		require('postcss-custom-properties')({ preserve: false }),
-		require('postcss-combine-media-query'),
 		require('autoprefixer')(),
 		require('cssnano')( {
 			preset: ['default', {
