@@ -1,6 +1,7 @@
 # My Stuff
 assets/built/
 .DS_Store
+.vscode
 
 # Logs
 logs

@@ -31,18 +31,7 @@
 
             {{/foreach}}
         </div>
-
-        <script>
-            window.max_pages = parseInt('{{pagination.pages}}');
-            window.post_index = true;
-        </script>
-        <div class="posts-loading hidden">
-            <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
-            <p>Loading More Posts</p>
-        </div>
-        <noscript>
-            {{pagination}}
-        </noscript>
+        {{pagination}}
     </main>
 </div>
 

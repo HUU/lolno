@@ -518,58 +518,6 @@ const taglines = {
 	}
 }
 
-const infinitescroll = {
-	page: 1,
-	loading: false,
-	loaderTimeout: null,
-	posts: null,
-	request: null,
-	url: window.location.href,
-	init: function() {
-		if (window.post_index) {
-			if (this.url.charAt(this.url.length - 1) != '/') {
-				this.url = this.url + '/';
-			}
-
-			$(window).scroll(this.onscroll.bind(this));
-		}
-	},
-	onscroll: function() {
-		if (this.page < window.max_pages && !this.loading && ($(window).scrollTop() + $(window).height() >= $(document).height())) {
-					
-			var nextPage = this.url + 'page/' + (this.page + 1);
-			this.page += 1;
-			this.loading = true;
-
-			$('.posts-loading').removeClass("hidden").addClass("visible");
-			this.loaderTimeout = setTimeout((function () {
-				this.loaderTimeout = null;
-
-				if (this.request) {
-					return;
-				} else {
-					this.hideLoader();
-				}
-			}).bind(this), 2000);
-
-			this.request = $.get(nextPage, (function (content) {
-				this.request = null;
-				this.posts = $($.parseHTML(content)).find('.post-card');
-
-				if (this.loaderTimeout) {
-					return;
-				} else {
-					this.hideLoader();
-				}
-			}).bind(this));
-		}
-	},
-	hideLoader: function() {
-		$('.post-feed').append(this.posts);
-		$('.posts-loading').removeClass("visible").addClass("hidden");
-	}
-}
-
 /*
  * ----------------------------------------------------------------
  * Page Loading
@@ -581,5 +529,4 @@ $(document).ready(function() {
     siblingPosts.init();
 	highlight.init();
 	taglines.init();
-	infinitescroll.init();
 });
